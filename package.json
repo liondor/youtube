@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend to get video data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server",
+    "react": "npm --prefix ../hedonism run start",
+    "reactprod": "npm --prefix ../hedonism run prod",
+    "py": "py ../hedonism/src/hello.py ",
+    "dev": "npm run  py && concurrently \"npm run start\" \"npm run react\"",
+    "prod": "npm run py && concurrently \"npm run start\" \"npm run reactprod\""
+  },
+  "author": "",
+  "proxy": "http://localhost:5000",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "mysql": "^2.18.1",
+    "node-schedule": "^2.0.0",
+    "python-shell": "^2.0.3"
+  }
+}
