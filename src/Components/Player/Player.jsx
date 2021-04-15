@@ -9,7 +9,14 @@ const Player = ({currentChannel, page, sendPlaylistSize})=> {
     var [currentPage, setCurrentPage] = useState(0)
     var [channel, setChannel] = useState("All")
     const NUMBER_OF_VIDEOS_PER_PAGE = 6
-
+    const placeholder= [
+      "//www.youtube.com/embed/9e-lWQdO-DA",
+      "//www.youtube.com/embed/oq32PUomubY",
+      "//www.youtube.com/embed/mNHyKA__VwU",
+      "//www.youtube.com/embed/ylP73FT4r1U", 
+      "//www.youtube.com/embed/msYCq2J8EPI",
+      "//www.youtube.com/embed/Wn4VUhSAKQs"
+    ]
     useEffect(() => {
         async function getPlaylist() {
           const fetchedPlaylist = await fetchVideos();;

@@ -228,4 +228,3 @@ except mysql.connector.Error as err:
    # print(len(latestVidsSearch))
 
     #print(latestVids["items"][i]["id"]['videoId'], latestVids["items"][i]['snippet']['channelTitle'])
-"""
