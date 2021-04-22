@@ -19,7 +19,7 @@ function App() {
   var [currentPage, setCurrentPage] = useState(0)
   var [currentChannel, setCurrentChannel] = useState("All")
 
-
+  const placeholder = ["HoneyPot","Kevin Powell","Ludwig","The Guardian","Scishow"]
   
   useEffect(() => {
 
@@ -27,15 +27,15 @@ function App() {
 
       const fetchedChannels = await fetchChannels();
       if (fetchChannels !== undefined) {
-        setChannelsList(fetchedChannels)
-        insertChannels(channelsList)
+     //   setChannelsList(fetchedChannels)
+   //     insertChannels(channelsList)
       }
     }
     getChannels();
   }, [])
 
   useEffect(() => {
-    insertChannels(channelsList)
+//    insertChannels(channelsList)
   }, [channelsList])
 
   
@@ -113,7 +113,7 @@ function App() {
       <FormControl variant="filled">
        <NativeSelect label="??" variant="filled" id="channelSelector" defaultValue={"All"} onChange={(e) => changeChannel(e)}>
           <option value="All">All</option>
-          {channelsList.map(channel => <option value={channel.author}>{channel.author} </option>)}
+          {channelsList.length>0?channelsList.map(channel => <option value={channel.author}>{channel.author} </option>):placeholder.map(channel => <option value={channel}> {channel} </option>)}
       </NativeSelect>
       </FormControl>
       </Box>
